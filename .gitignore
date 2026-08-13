@@ -1,0 +1,20 @@
+.DS_Store
+
+__pycache__/
+
+
+# Datasets
+*.csv
+
+# Logs
+*.log
+
+# ML models
+*.safetensors
+*.pkl
+
+# Environments and Secrets (NEVER PUSH THESE)
+venv/
+env/
+.env
+frontend/.streamlit/secrets.toml
