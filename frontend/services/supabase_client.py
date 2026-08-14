@@ -21,9 +21,13 @@ def _secret(key: str, section: str = 'supabase') -> str:
     if val:
         return val
     try:
-        return st.secrets[section][key]
+        sec = st.secrets[section]
+        if key in sec: return sec[key]
+        if key.lower() in sec: return sec[key.lower()]
+        if key.upper() in sec: return sec[key.upper()]
     except (KeyError, FileNotFoundError, AttributeError):
-        return ''
+        pass
+    return ''
 
 
 SUPABASE_URL = _secret('SUPABASE_URL')
