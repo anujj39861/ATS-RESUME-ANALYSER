@@ -31,7 +31,6 @@ async def analyze_resume(
 
 
     nlp      = request.app.state.nlp
-    embedder = request.app.state.embedder
 
 
     try:
@@ -61,7 +60,6 @@ async def analyze_resume(
         result = analyze_full_resume(
             resume_text=resume_text,
             nlp=nlp,
-            embedder=embedder,
             job_description=job_description
         )
     except Exception as exc:
